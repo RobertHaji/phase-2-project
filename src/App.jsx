@@ -5,6 +5,12 @@ import { RecipeForm } from './RecipeForm'
 import { ReceiptList } from './RecipeList'
 
 export function App() {
+
+  // // First we are providing a state to hold all the recipes from our db.json
+  // const [recipes, setRecipes] = useState([])
+
+  // useEffect(() => {
+    
   return (
     <>
     <header> 
