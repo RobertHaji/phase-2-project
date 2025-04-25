@@ -11,8 +11,11 @@ export function RecipeCard({ recipe, onDelete }) {
   const handleDelete = (e) => {
     e.preventDefault(); // prevents the reloead on delete
 
+
+
     // Then perform the Delete request using fetch using the recipes unique IDs
 
+    
     fetch(`http://localhost:6001/recipes/${recipe.id}`, {
       method: "DELETE",
     })
@@ -28,16 +31,16 @@ export function RecipeCard({ recipe, onDelete }) {
       });
   };
   return (
-    <div className="relative">
+    <div className="relative group">
       <Link
         to={`/RecipeList/${recipe.id}`}
         className="block hover:scale-105 transition-transform duration-200"
       >
-        <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 cursor-pointer">
+        <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 cursor-pointer h-72 flex flex-col justify-between">
           <img
             src={recipe.image}
             alt={recipe.title}
-            className="w-full h-40 object-cover"
+            className="w-full h-48 object-cover rounded-t-xl"
           />
           <div className="p-4">
             <h2 className="text-md font-semibold text-gray-800">
@@ -69,7 +72,7 @@ export function RecipeCard({ recipe, onDelete }) {
         className="absolute bottom-2 right-2 ... cursor-pointer"
       >
         {/* Trash Icon for the delete button */}
-        <Trash2 className="w-4 h-5" /> 
+        <Trash2 className="w-4 h-5" />
       </button>
     </div>
   );
